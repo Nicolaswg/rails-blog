@@ -23,5 +23,15 @@ RSpec.describe 'UserController', type: :request do
       expect(response).to have_http_status(:ok)
       expect(response).to render_template(:show)
     end
+
+    it 'check :index placeholder' do
+      get '/user'
+      expect(response.body).to include('Show user index')
+    end
+
+    it 'check :show placeholder' do
+      get '/user/1'
+      expect(response.body).to include('Show user page')
+    end
   end
 end
