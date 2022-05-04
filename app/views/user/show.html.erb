@@ -1,1 +1,39 @@
-<h1>Show user page</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog App!</title>
+</head>
+<body>
+  <div class="index flex-column">
+		<div class="card-container flex-row">
+			<div class="img-container">
+				<img class="user-img" src=<%= @current_user.photo %> alt="user-img">
+			</div>
+			<div class="user flex-row">
+				<h1><%= @current_user.name %></h1>
+				<p>Number of posts: <%= @current_user.post_counter %></p>
+			</div>
+		</div>
+		<div class="info-container">
+			<p>Bio</p>
+			<p><%= @current_user.bio%></p>
+		</div>
+		<% @current_user.most_recent_posts.each do |post| %>
+			<div class="info-container">
+				<p><%= post.title %></p>
+				<p><%= post.text%></p>
+			<div class="counters">
+					<h5>Comments: <%= post.comments_counter || 0 %></h5>
+					<h5>Likes: <%= post.likes_counter || 0 %></h5>
+			</div>
+			</div>
+		<%end%>
+		<div class="button-container">
+			<button>See all post</button>
+		</div>
+  </div>
+</body>
+</html>

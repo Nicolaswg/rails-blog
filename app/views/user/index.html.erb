@@ -1,4 +1,24 @@
-<h1>Show user index</h1>
-<% @users.each do |item| %>
-<h1><%= item.name%></h1>
-<%end %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog App!</title>
+</head>
+<body>
+  <div class="index flex-column">
+		<%@users.each do |user|%>
+		<div class="card-container flex-row">
+			<div class="img-container">
+				<img class="user-img" src=<%= user.photo %> alt="user-img">
+			</div>
+			<div class="user flex-row">
+				<h1><%= user.name %></h1>
+				<p>Number of posts: <%= user.post_counter %></p>
+			</div>
+		</div>
+		<%end%>
+  </div>
+</body>
+</html>
