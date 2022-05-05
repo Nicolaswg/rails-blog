@@ -10,7 +10,7 @@
 		</div>
 			<%@posts.each.with_index(1) do |post, index|%>
 				<div class="info-container">
-					<p>Post #<%= post.id %></p>
+					<%= link_to post.title, {controller: 'post', action: 'show', id: post.id }, class: 'post-link'%>
 					<p><%= post.text%></p>
 					<div class="counters">
 						<h5>Comments: <%= post.comments_counter || 0 %></h5>
@@ -18,12 +18,17 @@
 					</div>
 				</div>
 				<div class="comment-container">
-					<% post.most_recent_comments.each do |comment|%></p>
-						<div class="comments">
-							<p><%= comment.author.name%>: </p>
-							<p><%= comment.text%></p>
-						</div>
+					<% if post.comments_counter != nil %>
+						<% post.most_recent_comments.each do |comment|%>
+							<div class="comments">
+								<p><%= comment.author.name%>: </p>
+								<p><%= comment.text%></p>
+							</div>
+						<%end%>
+					<%else%>
+						<p>No comments added</p>
 					<%end%>
 				</div>
 			<%end%>
-  </div>
+			<%=link_to 'Go Back', {controller: 'user', action: 'show', id: @user.id }, class: 'btn-container' %>
+</div>

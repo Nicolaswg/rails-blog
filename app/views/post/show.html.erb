@@ -1,2 +1,27 @@
-<h1>Show current Post</h1>
+<div class="index flex-column">
+	<div class="post-container ">
+		<div class="flex-row">
+			<div class="post-title">
+				<p><%=@post.title%> by <%=@user.name%></p>
+			</div>
+			<div class="post-counters flex-row">
+				<p>Comments: <%=@post.comments_counter || 0 %></p>
+				<p>Likes: <%=@post.likes_counter || 0 %></p>
+			</div>
+		</div>
+		<div class="post-text">
+			<p><%=@post.text%></p>
+		</div>
+	</div>
+	<div class="post-container">
+	<%if @post.comments_counter != nil%>
+	<%@post.comments.each do |comment|%>
+		<p><%=comment.text%></p>	
+	<%end%>
+	<%else%>
+		<p>No comments added</p>
+	<%end%>
+	</div>
+    <%= link_to 'Go Back', {controller: 'post', action: 'index', user_id: @user.id }, class: 'btn-container' %>
+</div>
 
