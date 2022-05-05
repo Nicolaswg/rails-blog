@@ -1,2 +1,34 @@
-<h1>See all user Post</h1>
-
+<div class="index flex-column">
+		<div class="card-container flex-row">
+			<div class="img-container">
+				<img class="user-img" src=<%= @user.photo %> alt="user-img">
+			</div>
+			<div class="user flex-row">
+				<h1><%= @user.name %></h1>
+				<p>Number of posts: <%= @user.post_counter %></p>
+			</div>
+		</div>
+			<%@posts.each.with_index(1) do |post, index|%>
+				<div class="info-container">
+					<%= link_to post.title, {controller: 'post', action: 'show', id: post.id }, class: 'post-link'%>
+					<p><%= post.text%></p>
+					<div class="counters">
+						<h5>Comments: <%= post.comments_counter || 0 %></h5>
+						<h5>Likes: <%= post.likes_counter || 0 %></h5>
+					</div>
+				</div>
+				<div class="comment-container">
+					<% if post.comments_counter != nil %>
+						<% post.most_recent_comments.each do |comment|%>
+							<div class="comments">
+								<p><%= comment.author.name%>: </p>
+								<p><%= comment.text%></p>
+							</div>
+						<%end%>
+					<%else%>
+						<p>No comments added</p>
+					<%end%>
+				</div>
+			<%end%>
+			<%=link_to 'Go Back', {controller: 'user', action: 'show', id: @user.id }, class: 'btn-container' %>
+</div>

@@ -13,3 +13,211 @@
  *= require_tree .
  *= require_self
  */
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500&display=swap");
+
+:root {
+  --background-color: #aa4b6b;
+  --border-: 4px solid #000;
+  --font-family: "Ubuntu", sans-serif;
+  --color-white: #fff;
+  --text-font-size: 1.2rem;
+}
+
+body {
+  background: var(--background-color);
+  background: linear-gradient(to right, #3b8d99, #6b6b83, #aa4b6b);
+  font-family: var(--font-family);
+}
+
+/* HOME USER INDEX CSS */
+
+.index {
+  padding: 20px;
+  gap: 5px;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.flex-row {
+  display: flex;
+}
+
+.card-container {
+  width: 55%;
+  height: 160px;
+  gap: 15px;
+  overflow: hidden;
+  margin: 20px;
+  padding: 5px;
+}
+
+.img-container {
+  width: 150px;
+  height: 150px;
+  border: var(--border-);
+  border-radius: 4px;
+  background: var(--color-white);
+}
+
+.user-img {
+  flex-grow: 1;
+}
+
+.user {
+  flex-grow: 2;
+  height: 150px;
+  border: var(--border-);
+  border-radius: 4px;
+  background: var(--color-white);
+  position: relative;
+}
+
+.user h1 {
+  position: absolute;
+  font-size: 2.5rem;
+  top: calc(40% / 2);
+  left: 20px;
+  transition: color, ease, 600ms;
+}
+
+.user p {
+  position: absolute;
+  bottom: 0;
+  right: 20px;
+  font-size: 1.5rem;
+}
+
+.user-link {
+  text-decoration: none;
+  color: #000;
+  transition: color, ease, 600ms;
+}
+
+.user-link:hover {
+  color: #aa4b6b;
+}
+
+/* HOME USER INDEX CSS */
+
+/* USER SHOW CSS */
+
+.info-container {
+  width: 52.5%;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-white);
+  border: var(--border-);
+  border-radius: 4px;
+  padding: 15px;
+  font-size: var(--text-font-size);
+}
+
+.comments p {
+  margin: 0;
+  padding: 0;
+  font-weight: 500;
+  font-size: var(--text-font-size);
+}
+
+.info-container p:nth-child(1) {
+  margin-top: -3px;
+  font-weight: 500;
+}
+
+.info-container p:nth-child(2) {
+  letter-spacing: 1.5px;
+  text-align: justify;
+}
+
+.counters {
+  display: flex;
+  column-gap: 10px;
+  justify-content: flex-end;
+}
+
+.btn-container {
+  padding: 12px;
+  border-radius: 5px;
+  background: var(--color-white);
+  cursor: pointer;
+  list-style: none;
+  text-decoration: none;
+  transition: background-color, ease, 600ms;
+}
+
+.btn-container:hover {
+  background-color: #c8c8dc;
+}
+
+/* USER SHOW CSS */
+
+/* POST INDEX CSS */
+
+.comment-container {
+  width: 52.6%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border: var(--border-);
+  background: var(--color-white);
+  padding: 10px;
+}
+
+.comments {
+  display: flex;
+  column-gap: 5px;
+  padding-bottom: 5px;
+}
+
+.post-link {
+  text-decoration: none;
+  color: #000;
+  transition: color, ease, 600ms;
+}
+
+.post-link:hover {
+  color: #aa4b6b;
+}
+
+/* POST INDEX CSS */
+
+/* POST SHOW CSS */
+
+.post-container {
+  width: 55%;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-white);
+  border: var(--border-);
+  border-radius: 4px;
+}
+
+.post-title {
+  font-size: var(--text-font-size);
+  font-weight: 500;
+  padding: 5px;
+  flex-grow: 1;
+}
+
+.post-counters {
+  column-gap: 5px;
+  padding-right: 10px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  font-style: italic;
+  flex-grow: 1;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.post-text {
+  font-size: var(--text-font-size);
+  text-align: justify;
+  padding: 10px;
+}
+
+/* POST SHOW CSS */
