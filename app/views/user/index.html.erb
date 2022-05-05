@@ -14,7 +14,7 @@
 				<img class="user-img" src=<%= user.photo %> alt="user-img">
 			</div>
 			<div class="user flex-row">
-				<h1><%= user.name %></h1>
+				<h1><%= link_to user.name, {controller: 'user', action: 'show', id: user.id}, class: 'user-link' %></h1>
 				<p>Number of posts: <%= user.post_counter %></p>
 			</div>
 		</div>

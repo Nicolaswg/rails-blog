@@ -25,15 +25,13 @@
 			<div class="info-container">
 				<p><%= post.title %></p>
 				<p><%= post.text%></p>
-			<div class="counters">
+				<div class="counters">
 					<h5>Comments: <%= post.comments_counter || 0 %></h5>
 					<h5>Likes: <%= post.likes_counter || 0 %></h5>
-			</div>
+				</div>
 			</div>
 		<%end%>
-		<div class="button-container">
-			<button>See all post</button>
-		</div>
-  </div>
+    <%= link_to 'See all posts', {controller: 'post', action: 'index', user_id: @current_user.id }, class: 'btn-container' %>
+	</div>
 </body>
 </html>
