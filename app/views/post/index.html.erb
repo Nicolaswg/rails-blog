@@ -13,12 +13,12 @@
 					<%= link_to post.title, {controller: 'post', action: 'show', id: post.id }, class: 'post-link'%>
 					<p><%= post.text%></p>
 					<div class="counters">
-						<h5>Comments: <%= post.comments_counter || 0 %></h5>
-						<h5>Likes: <%= post.likes_counter || 0 %></h5>
+						<h5>Comments: <%= post.comments_counter%></h5>
+						<h5>Likes: <%= post.likes_counter%></h5>
 					</div>
 				</div>
 				<div class="comment-container">
-					<% if post.comments_counter != nil %>
+					<% if post.comments_counter != 0 %>
 						<% post.most_recent_comments.each do |comment|%>
 							<div class="comments">
 								<p><%= comment.author.name%>: </p>

@@ -22,8 +22,14 @@ class PostController < ApplicationController
         values = params.require(:post).permit(:title, :text)
         post = Post.new(title: values[:title], text: values[:text])
         post.author_id = current_user.id
-        redirect_to "/user/#{post.author_id}/post/#{post.id}" if post.save
-      end
-    end
-  end
+				post.comments_counter = 0
+				post.likes_counter = 0
+        if post.save
+					redirect_to "/user/#{post.author_id}/post/#{post.id}"
+				else
+					redirect_to "/user/#{post.author_id}/post/new"
+      	end
+    	end
+  	end
+	end
 end

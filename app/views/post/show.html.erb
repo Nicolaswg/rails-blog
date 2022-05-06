@@ -15,7 +15,7 @@
 		<div class="like flex-row"><%= link_to render(:partial => "shared/like_form")%></div>
 	</div>
 	<div class="post-container">
-		<%if @post.comments_counter != nil%>
+		<%if @post.comments_counter != 0%>
 			<%@post.comments.each  do|comment|%>
 					<div class="comments flex-row">
 						<p><%=comment.author.name%>: </p>
