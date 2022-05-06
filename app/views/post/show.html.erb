@@ -30,5 +30,8 @@
 		<%=render partial: "shared/comment_form"%>
 	</div>
     <%= link_to 'Go Back', {controller: 'post', action: 'index', user_id: @user.id }, class: 'btn-container' %>
+		<% flash.each do |name, msg| -%>
+  <%= content_tag :div, msg, class: "#{name} generic-alert" %>
+  <% end -%>
 </div>
 
