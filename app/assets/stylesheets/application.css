@@ -230,6 +230,11 @@ body {
   align-items: center;
 }
 
+.form-btn {
+  text-decoration: none;
+  color: var(--color-white);
+}
+
 .post-form {
   padding: 12px;
   background: var(--color-white);

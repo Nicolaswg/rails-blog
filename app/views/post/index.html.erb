@@ -31,7 +31,5 @@
 				</div>
 			<%end%>
 		<%=link_to 'Go Back', {controller: 'user', action: 'show', id: @user.id }, class: 'btn-container' %>
-		<div class="add-form flex-row">
-		<%= link_to '+', {controller: 'post', action: 'new'}%>
-		</div>
+		<%= link_to render(:partial => "shared/post_btn"), {controller: 'post', action: 'new'}, class: 'form-btn'%>
 </div>

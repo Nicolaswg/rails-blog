@@ -17,7 +17,6 @@ class PostController < ApplicationController
   end
 
   def create
-    @user = User.find(params(:user_id))
     respond_to do |format|
       format.html do
         values = params.require(:post).permit(:title, :text)
