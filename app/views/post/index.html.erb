@@ -30,5 +30,6 @@
 					<%end%>
 				</div>
 			<%end%>
-			<%=link_to 'Go Back', {controller: 'user', action: 'show', id: @user.id }, class: 'btn-container' %>
+		<%=link_to 'Go Back', {controller: 'user', action: 'show', id: @user.id }, class: 'btn-container' %>
+		<%= link_to render(:partial => "shared/post_btn"), {controller: 'post', action: 'new'}, class: 'form-btn'%>
 </div>

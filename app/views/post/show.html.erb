@@ -12,15 +12,22 @@
 		<div class="post-text">
 			<p><%=@post.text%></p>
 		</div>
+		<div class="like flex-row"><%= link_to render(:partial => "shared/like_form")%></div>
 	</div>
 	<div class="post-container">
-	<%if @post.comments_counter != nil%>
-	<%@post.comments.each do |comment|%>
-		<p><%=comment.text%></p>	
-	<%end%>
-	<%else%>
-		<p>No comments added</p>
-	<%end%>
+		<%if @post.comments_counter != nil%>
+			<%@post.comments.each  do|comment|%>
+					<div class="comments flex-row">
+						<p><%=comment.author.name%>: </p>
+						<p><%=comment.text%></p>	
+					</div>
+			<%end%>
+		<%else%>
+			<p>No comments added</p>
+		<%end%>
+	</div>
+	<div class="comment-container">
+		<%=render partial: "shared/comment_form"%>
 	</div>
     <%= link_to 'Go Back', {controller: 'post', action: 'index', user_id: @user.id }, class: 'btn-container' %>
 </div>

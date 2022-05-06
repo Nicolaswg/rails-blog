@@ -158,7 +158,6 @@ body {
 /* POST INDEX CSS */
 
 .comment-container {
-  width: 52.6%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -221,3 +220,85 @@ body {
 }
 
 /* POST SHOW CSS */
+
+/* FORM CSS */
+
+.form-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-btn {
+  text-decoration: none;
+  color: var(--color-white);
+}
+
+.post-form {
+  padding: 12px;
+  background: var(--color-white);
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+
+.title-container {
+  column-gap: 5px;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-container {
+  column-gap: 5px;
+  justify-content: center;
+  align-items: center;
+}
+
+.title-container input {
+  width: 100%;
+  padding: 4px;
+  border-radius: 2px;
+}
+
+.text-container textarea {
+  padding: 4px;
+  border-radius: 2px;
+}
+
+.like {
+  justify-content: flex-end;
+}
+
+.btn-like {
+  margin: 10px;
+  padding: 5px;
+  border-radius: 6px;
+}
+
+.add-form {
+  background: rgba(59, 140, 153, 0.42);
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  font-size: 2rem;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background, ease, 600ms;
+}
+
+.add-form:hover {
+  background: rgba(59, 140, 153, 0.818);
+}
+
+.add-form a {
+  text-decoration: none;
+  color: var(--color-white);
+}
+
+/* FORM CSS */

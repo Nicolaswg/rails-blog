@@ -1,0 +1,5 @@
+<%= form_with scope: :Like, url: "/user/#{params[:user_id]}/post/#{params[:id]}/like", 
+	method: :post, local: true do |form| %>
+	
+	<%= form.submit 'like', class: "btn-like"%>
+<%end%>
