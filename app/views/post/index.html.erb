@@ -30,5 +30,8 @@
 					<%end%>
 				</div>
 			<%end%>
-			<%=link_to 'Go Back', {controller: 'user', action: 'show', id: @user.id }, class: 'btn-container' %>
+		<%=link_to 'Go Back', {controller: 'user', action: 'show', id: @user.id }, class: 'btn-container' %>
+		<div class="add-form flex-row">
+		<%= link_to '+', {controller: 'post', action: 'new'}%>
+		</div>
 </div>
