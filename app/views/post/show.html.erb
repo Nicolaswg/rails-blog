@@ -13,14 +13,18 @@
 			<p><%=@post.text%></p>
 		</div>
 	</div>
-	<div class="post-container">
+	<div class="post-container flex-row">
 	<%if @post.comments_counter != nil%>
-	<%@post.comments.each do |comment|%>
+	<%@post.comments.each  do|comment|%>
+		<p><%=comment.author.name%></p>
 		<p><%=comment.text%></p>	
 	<%end%>
 	<%else%>
 		<p>No comments added</p>
 	<%end%>
+	</div>
+	<div class="comment-container">
+		<%=render partial: "shared/comment_form"%>
 	</div>
     <%= link_to 'Go Back', {controller: 'post', action: 'index', user_id: @user.id }, class: 'btn-container' %>
 </div>

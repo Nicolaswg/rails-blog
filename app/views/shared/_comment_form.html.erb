@@ -1,0 +1,7 @@
+<%= form_with scope: :comment, url: "/user/#{params[:user_id]}/post/#{params[:id]}/comment", 
+	method: :post, local: true, class: 'post-form' do |form| %>
+	
+	<%= form.label :text, 'New comment: '%>
+	<%= form.text_field :text%>	
+	<%= form.submit 'submit'%>
+<%end%>
