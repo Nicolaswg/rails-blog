@@ -4,6 +4,6 @@ class UserController < ApplicationController
   end
 
   def show
-    @current_user = User.find(params[:id])
+    @current_user = User.includes(:posts).find(params[:id])
   end
 end

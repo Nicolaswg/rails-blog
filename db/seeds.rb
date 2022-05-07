@@ -8,11 +8,12 @@
 photo_arr = [
 
 	'https://avatars.dicebear.com/api/female/:seed.svg',
-	'https://avatars.dicebear.com/api/male/:seed.svg']
+	'https://avatars.dicebear.com/api/male/:seed.svg',
+	'https://avatars.dicebear.com/api/bottts/:seed.svg']
 
 (1..6).each do |id|
 	User.create(name: "User_#{id}",
-		photo: photo_arr[rand(0..1)],
+		photo: photo_arr[rand(0..2)],
 		bio: "Im User_#{id} Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 		Donec sed metus ac dui fermentum lacinia ac ac eros.
 		Pellentesque efficitur nunc eget iaculis vestibulum.
@@ -20,7 +21,8 @@ photo_arr = [
 		Nunc elementum consequat velit a egestas.
 		Integer elementum neque in hendrerit maximus.
 		Nullam tempor risus et nisl faucibus, at maximus tortor mollis.
-		Quisque vitae est justo. Praesent consequat est neque, non accumsan mauris ornare at. "
+		Quisque vitae est justo. Praesent consequat est neque, non accumsan mauris ornare at. ",
+		post_counter: 0
 	)
 end
 
@@ -32,14 +34,16 @@ end
 	Ut mollis purus est, ut pulvinar libero ullamcorper eget. Nullam molestie arcu lobortis velit lacinia maximus. 
 	Maecenas lacinia, elit faucibus aliquam tristique, erat dolor vehicula metus, vitae consequat sapien libero sit amet purus.
 	Nulla sed magna egestas, tempus orci in, volutpat velit. Nam sed tristique libero, at convallis velit. In sagittis quis felis sit amet sagittis.
-	Praesent consequat accumsan tincidunt. "
+	Praesent consequat accumsan tincidunt. ",
+	comments_counter: 0,
+	likes_counter: 0
 )
 end
 
-(1..30).each do |id|
+(1..50).each do |id|
 	Comment.create(post_id: rand(1..20), author_id: rand(1..6), text: "Thi is the comment-#{id}")
 end
 
-(1..30).each do |id|
+(1..50).each do |id|
 	Like.create(post_id: rand(1..20), author_id: rand(1..6))
 end

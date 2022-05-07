@@ -302,3 +302,35 @@ body {
 }
 
 /* FORM CSS */
+
+/* FLASH CSS */
+
+.generic-alert {
+  border-radius: 3px;
+  margin: 10px;
+  padding: 10px;
+  margin-top: 20px;
+  font-weight: bold;
+  color: var(--color-white);
+  border: 2px solid rgb(88, 88, 88);
+  animation: hideAnimation 0s ease-in 5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes hideAnimation {
+  to {
+    visibility: hidden;
+    width: 0;
+    height: 0;
+  }
+}
+
+.error {
+  background: rgba(247, 65, 65, 0.751);
+}
+
+.success {
+  background: rgba(12, 194, 12, 0.769);
+}
+
+/* FLASH CSS */
