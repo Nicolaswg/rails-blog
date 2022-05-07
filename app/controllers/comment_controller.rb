@@ -8,12 +8,12 @@ class CommentController < ApplicationController
         comment = Comment.new(text: values[:text])
         comment.author_id = user.id
         comment.post_id = post.id
-				if comment.save
-					flash[:success] = "Comment added correctly"
-				else
-					flash[:error] = "Error! comment not added"
-				end
-				redirect_to "/user/#{user.id}/post/#{post.id}"
+        if comment.save
+          flash[:success] = 'Comment added correctly'
+        else
+          flash[:error] = 'Error! comment not added'
+        end
+        redirect_to "/user/#{user.id}/post/#{post.id}"
       end
     end
   end

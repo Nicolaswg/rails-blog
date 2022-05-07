@@ -1,11 +1,11 @@
 class PostController < ApplicationController
   def index
-    @user = User.includes(:posts, posts: [:comments, {comments: [:author]}]).find(params[:user_id])
+    @user = User.includes(:posts, posts: [:comments, { comments: [:author] }]).find(params[:user_id])
     @posts = @user.posts
   end
 
   def show
-    @user = User.includes(:posts, posts: [:comments, {comments: [:author]}]).find(params[:user_id])
+    @user = User.includes(:posts, posts: [:comments, { comments: [:author] }]).find(params[:user_id])
     @post = Post.includes(:comments, comments: [:author]).find(params[:id])
   end
 
@@ -22,16 +22,16 @@ class PostController < ApplicationController
         values = params.require(:post).permit(:title, :text)
         post = Post.new(title: values[:title], text: values[:text])
         post.author_id = current_user.id
-				post.comments_counter = 0
-				post.likes_counter = 0
+        post.comments_counter = 0
+        post.likes_counter = 0
         if post.save
-					redirect_to "/user/#{post.author_id}/post/#{post.id}"
-					flash[:success] = "Post added correctly"
-				else
-					redirect_to "/user/#{post.author_id}/post/new"
-					flash[:error] = "Error! Post wasn't added"
-      	end
-    	end
-  	end
-	end
+          redirect_to "/user/#{post.author_id}/post/#{post.id}"
+          flash[:success] = 'Post added correctly'
+        else
+          redirect_to "/user/#{post.author_id}/post/new"
+          flash[:error] = "Error! Post wasn't added"
+        end
+      end
+    end
+  end
 end

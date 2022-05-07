@@ -1,14 +1,15 @@
 require 'rails_helper'
 
 RSpec.describe 'PostsController', type: :request do
-	before :all do
+  before :all do
     Comment.destroy_all
     Post.destroy_all
     User.destroy_all
-		@user = User.create(id:1, name: 'test', photo: 'photo-1', bio: 'text-test', post_counter: 0)
-		@post = Post.create(id:1, author_id: @user.id, title: 'Post title', text: 'Some text', likes_counter: 0, comments_counter: 0)
+    @user = User.create(id: 1, name: 'test', photo: 'photo-1', bio: 'text-test', post_counter: 0)
+    @post = Post.create(id: 1, author_id: @user.id, title: 'Post title', text: 'Some text', likes_counter: 0,
+                        comments_counter: 0)
   end
-	
+
   describe 'GET PostController response' do
     it 'success response for :index' do
       get "/user/#{@user.id}/post"

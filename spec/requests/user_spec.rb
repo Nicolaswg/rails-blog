@@ -1,11 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe 'UserController', type: :request do
-	before :all do
+  before :all do
     Comment.destroy_all
     Post.destroy_all
     User.destroy_all
-		@user = User.create(id:1, name: 'test', photo: 'photo-1', bio: 'text-test', post_counter: 0)
+    @user = User.create(id: 1, name: 'test', photo: 'photo-1', bio: 'text-test', post_counter: 0)
   end
 
   describe 'GET UserController response' do
