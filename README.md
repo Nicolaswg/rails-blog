@@ -21,7 +21,7 @@
 - Open your command line and add this project in your preferred directory
 
 ```bash
-git clone https://github.com/Nicolaswg/blog-app.git
+git clone https://github.com/Nicolaswg/rails-blog.git
 ```
 
 - Then cd into the directory using
